@@ -1,39 +1,64 @@
 # decompositionTree
 
-This template should help get you started developing with Vue 3 in Vite.
+这是一个vue3+ts+scss的分解树展示组件。
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## 使用
 
 ```sh
-npm install
+npm install decomposition-tree --save
 ```
 
-### Compile and Hot-Reload for Development
+```vue3
+<script setup lang="ts">
+  import DecompositionTree from 'decomposition-tree';
+  import 'decomposition-tree/lib/style.css';
 
-```sh
-npm run dev
+  const treeData = [
+    {id:'1', label:'节点1',children:[
+        {id:'1-1',label:'节点1-1'},
+        {id:'1-2',label:'节点1-2'},
+      ]}
+  ];
+</script>
+<template>
+  <decomposition-tree :tree-data="treeData">
+    <template #item="{ item, col, index }">
+      {{ item.label}}
+    </template>
+  </decomposition-tree>
+</template>
 ```
 
-### Type-Check, Compile and Minify for Production
+## 属性
 
-```sh
-npm run build
-```
+| 名            | 描述                                   | 默认组                |
+|--------------|--------------------------------------|--------------------|
+| treeData   | 数据，格式`[{id:'',children:[]},]`        | `[]`               |
+| height | 组件高度，需带单位，例如`400px`                  | `''`               |
+| itemHeight | 项高度                                  | `46`                 |
+| itemSpacing | 项下边距                                 | `16`                 |
+| color | 选中颜色                                 | `rgb(224, 227, 235)` |
+| activeColor | 未选中颜色                                |  `'rgb(138, 110, 250)'`|
+| bodyStyle | 内容css样式，例如`{border:'1px solid red'}` | `{}`               |
 
-### Lint with [ESLint](https://eslint.org/)
+## 事件
 
-```sh
-npm run lint
-```
+| 名       | 参数 | 描述 |
+|---------|-----|-----|
+| onItemClick | `item`：项数据 | 项被点击 |
+
+## 插槽
+
+| 名       | 属性 | 描述 |
+|---------|-----|-----|
+| default | - | 默认插槽 |
+| item    | `item`：项数据、`col`：列索引、`index`：项索引 | 项插槽 |
+| header  | `columnData`：列数据，`selectedItem`：选中项索引 | 头部插槽 |
+
+
+## 接口
+
+| 名            | 描述 |
+|--------------|-----|
+| columnData   | 列数据 |
+| selectedItem | 选中项 |

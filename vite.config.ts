@@ -10,15 +10,25 @@ export default defineConfig({
   plugins: [vue(), vueJsx(), vueDevTools()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     }
   },
-  css: {
-    preprocessorOptions: {
-      // 注入全局主题变量
-      scss: {
-        additionalData: `@use "@/assets/styles/var.scss" as *;`
-      }
+    build: {
+        outDir: 'lib',
+        rollupOptions: {
+            external: ['vue','leader-line-vue','filter-obj'],
+            output: {
+                globals: {
+                    vue: 'Vue',
+                    'leader-line-vue': 'leader-line-vue',
+                    'filter-obj': 'filter-obj'
+                }
+            }
+        },
+        lib: {
+            entry: 'package/index.ts',
+            name: 'decomposition-tree',
+            fileName:'index'
+        }
     }
-  }
 })

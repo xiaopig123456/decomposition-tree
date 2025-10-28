@@ -1,17 +1,13 @@
-import 'normalize.css'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import './assets/styles/index.scss'
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+import DecompositionTree from "../package/index";
 
 import App from './App.vue'
-import router from './router'
 
 const app = createApp(App)
 
 app.use(ElementPlus)
-app.use(createPinia())
-app.use(router)
+app.use(DecompositionTree)
 
 app.mount('#app')
