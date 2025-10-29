@@ -2,7 +2,7 @@
 
 一个vue3分解树展示组件。
 
-![decomposition tree preview](https://github.com/xiaopig123456/decomposition-tree/blob/main/src/assets/preview.png)
+![decomposition tree preview](https://github.com/xiaopig123456/decomposition-tree/blob/main/src/assets/preview.jpg)
 
 ## 使用
 
