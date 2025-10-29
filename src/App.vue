@@ -90,7 +90,6 @@ function onDecompositionTreeClick(item: any) {
       <h1 style="text-align: center">分解树插件示例</h1>
     </el-header>
     <el-main v-loading="loading" element-loading-text="异步加载数据示例...">
-
       <decomposition-tree :tree-data="treeData" @onItemClick="onDecompositionTreeClick" :bodyStyle="{border: '1px solid #eee'}">
         <template #header="slotProps">
           <div class="demo-header">
@@ -105,7 +104,6 @@ function onDecompositionTreeClick(item: any) {
           <div class="demo-item">{{ item.label || '节点'+item._uid }}</div>
         </template>
       </decomposition-tree>
-
     </el-main>
   </el-container>
 </template>

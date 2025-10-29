@@ -1,0 +1,20 @@
+# 忽略目录
+.idea
+.vscode
+.history
+packages/
+public/
+node_modules/
+src/
+
+# 忽略指定文件
+.prettierrc.json
+.eslintrc.cjs
+env.d.ts
+index.html
+vite.config.ts
+tsconfig.json
+tsconfig.node.json
+tsconfig.app.json
+.gitignore
+package-lock.json

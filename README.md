@@ -2,6 +2,8 @@
 
 这是一个vue3+ts+scss的分解树展示组件。
 
+![decomposition tree preview](https://github.com/xiaopig123456/decomposition-tree/main/src/assets/to/preview.png)
+
 ## 使用
 
 ```sh

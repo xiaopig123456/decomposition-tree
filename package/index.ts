@@ -1,8 +1,7 @@
 import DecompositionTree from "./DecompositionTree.vue";
-import type {App} from "vue";
 
 export default {
-    install(Vue:App) {
+    install(Vue:any) {
         Vue.component("DecompositionTree", DecompositionTree);
     }
 }
