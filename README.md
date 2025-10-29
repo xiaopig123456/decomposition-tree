@@ -1,8 +1,8 @@
 # decompositionTree
 
-这是一个vue3+ts+scss的分解树展示组件。
+一个vue3分解树展示组件。
 
-![decomposition tree preview](https://github.com/xiaopig123456/decomposition-tree/main/src/assets/to/preview.png)
+![decomposition tree preview](https://github.com/xiaopig123456/decomposition-tree/blob/main/src/assets/preview.png)
 
 ## 使用
 

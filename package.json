@@ -2,7 +2,7 @@
   "name": "decomposition-tree",
   "version": "0.0.1",
   "private": false,
-  "description": "一个vue3分解树展示插件。",
+  "description": "一个vue3分解树展示组件。",
   "type": "module",
   "main": "lib/index.umd.js",
   "module": "lib/index.js",
